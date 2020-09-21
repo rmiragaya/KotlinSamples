@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KotlinExamplesSamples</string>
+    <string name="error_generico_code">505</string>
+    <string name="error_generico_descripcion">Error Genérico</string>
 </resources>

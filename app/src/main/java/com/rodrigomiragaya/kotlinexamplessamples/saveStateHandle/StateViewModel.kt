@@ -1,10 +1,7 @@
 package com.rodrigomiragaya.kotlinexamplessamples.saveStateHandle
 
 import android.os.Bundle
-import androidx.lifecycle.AbstractSavedStateViewModelFactory
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import androidx.savedstate.SavedStateRegistryOwner
 
 /**
@@ -16,7 +13,7 @@ import androidx.savedstate.SavedStateRegistryOwner
  * */
 abstract class StateViewModel (val state: SavedStateHandle) : ViewModel() {
 
-    class Factory(private val owner: SavedStateRegistryOwner, args: Bundle?) : AbstractSavedStateViewModelFactory(owner, args) {
+    class Factory(owner: SavedStateRegistryOwner, args: Bundle?) : AbstractSavedStateViewModelFactory(owner, args) {
         override fun <T : ViewModel?> create(key: String, modelClass: Class<T>, handle: SavedStateHandle): T {
             return modelClass.getConstructor(SavedStateHandle::class.java).newInstance(handle)
         }
@@ -28,5 +25,6 @@ abstract class StateViewModel (val state: SavedStateHandle) : ViewModel() {
         data.observeForever { state.set(key, it) }
         return state[key]
     }
+
 
 }

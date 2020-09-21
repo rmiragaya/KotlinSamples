@@ -3,8 +3,11 @@ package com.rodrigomiragaya.kotlinexamplessamples
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.rodrigomiragaya.kotlinexamplessamples.retrofit.RetrofitGetActivity
 import com.rodrigomiragaya.kotlinexamplessamples.saveStateHandle.SaveStateActivity
 import kotlinx.android.synthetic.main.activity_main.*
+
+const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +20,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SaveStateActivity::class.java)
             startActivity(intent)
         }
+
+        retrofitGetBtn.setOnClickListener {
+            val intent = Intent(this, RetrofitGetActivity::class.java)
+            startActivity(intent)
+        }
+
 
     }
 }
