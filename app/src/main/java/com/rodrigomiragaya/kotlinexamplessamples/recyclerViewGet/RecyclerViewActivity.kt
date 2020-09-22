@@ -1,6 +1,7 @@
 package com.rodrigomiragaya.kotlinexamplessamples.recyclerViewGet
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,8 @@ import com.rodrigomiragaya.kotlinexamplessamples.retrofitGet.Post
 import com.rodrigomiragaya.kotlinexamplessamples.saveStateHandle.StateViewModel
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 import java.util.*
+
+const val TAG = "RecyclerViewActivity"
 
 class RecyclerViewActivity : AppCompatActivity() {
 
@@ -27,17 +30,25 @@ class RecyclerViewActivity : AppCompatActivity() {
             RecyclerViewViewModel::class.java
         )
 
-        getPostsBtn.setOnClickListener { viewModel.getUserIdPosts(getRandomUserID()) }
+        getPostsBtn.setOnClickListener {
+            viewModel.getUserIdPosts(getRandomUserID())
+            noResultsLayout.visibility = View.INVISIBLE
+        }
 
         initRecycler()
         initObservers()
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart: call")
+        if (viewModel.post.value == null) {viewModel.getUserIdPosts(getRandomUserID())}
+    }
+
     private fun initRecycler(){
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
-
     }
 
     private fun initObservers(){
@@ -55,6 +66,9 @@ class RecyclerViewActivity : AppCompatActivity() {
                     ).show()
                 } else {
                     adapter.setData(it.value!!)
+                    if (it.value.isEmpty() && viewModel.isLoading.value == false){
+                        noResultsLayout.visibility = View.VISIBLE
+                    }
                 }
             }
         })
@@ -67,7 +81,7 @@ class RecyclerViewActivity : AppCompatActivity() {
     }
 
     private fun getRandomUserID() : Int{
-        val randomUserID = Random().nextInt(5 - 0 + 1) + 0
+        val randomUserID = Random().nextInt(8 - 0 + 1) + 0
         Toast.makeText(this, "$randomUserID", Toast.LENGTH_SHORT).show()
         return randomUserID
     }

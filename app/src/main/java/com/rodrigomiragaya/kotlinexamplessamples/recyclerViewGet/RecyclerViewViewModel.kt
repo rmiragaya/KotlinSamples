@@ -28,8 +28,9 @@ class RecyclerViewViewModel (state : SavedStateHandle) : StateViewModel(state) {
     }
 
     fun setPost(listPost : ResponseWrapper<List<Post>>){
-        post.value = listPost
         isLoading.value = false
+        post.value = listPost
+
     }
 
 
