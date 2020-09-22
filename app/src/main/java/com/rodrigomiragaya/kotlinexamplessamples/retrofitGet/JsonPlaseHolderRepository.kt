@@ -42,4 +42,13 @@ class JsonPlaseHolderRepository {
             onFinish = { Log.d(TAG, "getUserIdPosts: finish") }
         })
     }
+
+    fun pushPost(post : Post){
+        RetrofitInstance.jsonPlaceHolderApi.pushPost(post).enqueue(CallBackCustom<Post>().apply {
+            onSuccess = { getPostResponse.value = ResponseWrapper(listOf(it!!)) }
+            onServerError = { c, e -> getPostResponse.value = ResponseWrapper(c, e) }
+            onNetworkError = { getPostResponse.value = ResponseWrapper("505", "Error genérico") }
+            onFinish = { Log.d(TAG, "getUserIdPosts: finish") }
+        })
+    }
 }

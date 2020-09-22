@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.rodrigomiragaya.kotlinexamplessamples.recyclerViewGet.RecyclerViewActivity
 import com.rodrigomiragaya.kotlinexamplessamples.retrofitGet.RetrofitGetActivity
+import com.rodrigomiragaya.kotlinexamplessamples.retrofitPost.RetrofitPostActivity
 import com.rodrigomiragaya.kotlinexamplessamples.saveStateHandle.SaveStateActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -32,6 +33,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        retrofitPostBtn.setOnClickListener {
+            val intent = Intent(this, RetrofitPostActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }

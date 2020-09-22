@@ -1,5 +1,6 @@
 package com.rodrigomiragaya.kotlinexamplessamples.retrofitGet
 
+import android.util.Log
 import okhttp3.Headers
 import retrofit2.Call
 import retrofit2.Response
@@ -58,6 +59,8 @@ open class CallBackCustom<T> : retrofit2.Callback<T> {
     }
 
     override fun onFailure(call: Call<T>, t: Throwable) {
+        //todo mandar el Throwable que a veces tiene info importante
+        Log.d(TAG, "onFailure: ${t.toString()}")
         onNetworkError?.invoke()
         onFinish?.invoke(isSuccessful)
     }
