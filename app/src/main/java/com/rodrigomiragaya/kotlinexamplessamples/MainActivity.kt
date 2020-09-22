@@ -3,7 +3,8 @@ package com.rodrigomiragaya.kotlinexamplessamples
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.rodrigomiragaya.kotlinexamplessamples.retrofit.RetrofitGetActivity
+import com.rodrigomiragaya.kotlinexamplessamples.recyclerViewGet.RecyclerViewActivity
+import com.rodrigomiragaya.kotlinexamplessamples.retrofitGet.RetrofitGetActivity
 import com.rodrigomiragaya.kotlinexamplessamples.saveStateHandle.SaveStateActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -23,6 +24,11 @@ class MainActivity : AppCompatActivity() {
 
         retrofitGetBtn.setOnClickListener {
             val intent = Intent(this, RetrofitGetActivity::class.java)
+            startActivity(intent)
+        }
+
+        recyvlerBtn.setOnClickListener {
+            val intent = Intent(this, RecyclerViewActivity::class.java)
             startActivity(intent)
         }
 

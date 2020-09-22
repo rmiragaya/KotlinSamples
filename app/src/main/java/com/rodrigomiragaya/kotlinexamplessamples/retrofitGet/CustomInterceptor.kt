@@ -1,4 +1,4 @@
-package com.rodrigomiragaya.kotlinexamplessamples.retrofit
+package com.rodrigomiragaya.kotlinexamplessamples.retrofitGet
 
 import okhttp3.Interceptor
 import okhttp3.Response

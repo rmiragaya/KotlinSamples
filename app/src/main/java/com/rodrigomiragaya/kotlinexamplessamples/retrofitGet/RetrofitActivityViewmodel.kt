@@ -1,4 +1,4 @@
-package com.rodrigomiragaya.kotlinexamplessamples.retrofit
+package com.rodrigomiragaya.kotlinexamplessamples.retrofitGet
 
 import androidx.lifecycle.*
 import com.rodrigomiragaya.kotlinexamplessamples.saveStateHandle.StateViewModel
@@ -37,6 +37,5 @@ class RetrofitActivityViewmodel (state : SavedStateHandle) : StateViewModel(stat
         viewModelScope.launch {
             repo.getUserIdPosts(userId)
         }
-
     }
 }

@@ -1,4 +1,4 @@
-package com.rodrigomiragaya.kotlinexamplessamples.retrofit
+package com.rodrigomiragaya.kotlinexamplessamples.retrofitGet
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -21,7 +21,7 @@ class RetrofitGetActivity : AppCompatActivity() {
         // Init VModel with StateViewModel.Factory
         viewModel = ViewModelProvider(this, StateViewModel.Factory(this, savedInstanceState)).get(RetrofitActivityViewmodel::class.java)
 
-        getPostBtn.setOnClickListener {  viewModel.getPost() }
+        getPostsBtn.setOnClickListener {  viewModel.getPost() }
         getErrorPostBtn.setOnClickListener { viewModel.getErrorPost() }
         getPostNumberBtn.setOnClickListener { viewModel.getPostNumber(intFromEditTExt()) }
         getUserIdPostBtn.setOnClickListener { viewModel.getUserIdPosts(intFromEditTExt()) }

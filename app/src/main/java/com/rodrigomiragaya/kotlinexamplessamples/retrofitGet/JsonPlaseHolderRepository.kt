@@ -1,4 +1,4 @@
-package com.rodrigomiragaya.kotlinexamplessamples.retrofit
+package com.rodrigomiragaya.kotlinexamplessamples.retrofitGet
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

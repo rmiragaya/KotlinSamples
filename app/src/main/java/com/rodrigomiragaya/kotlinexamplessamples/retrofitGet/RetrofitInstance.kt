@@ -1,7 +1,7 @@
-package com.rodrigomiragaya.kotlinexamplessamples.retrofit
+package com.rodrigomiragaya.kotlinexamplessamples.retrofitGet
 
 import com.rodrigomiragaya.kotlinexamplessamples.BuildConfig
-import com.rodrigomiragaya.kotlinexamplessamples.retrofit.Constants.Companion.BASE_URL
+import com.rodrigomiragaya.kotlinexamplessamples.retrofitGet.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

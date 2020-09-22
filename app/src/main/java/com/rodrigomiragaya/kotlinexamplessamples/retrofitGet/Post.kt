@@ -1,4 +1,4 @@
-package com.rodrigomiragaya.kotlinexamplessamples.retrofit
+package com.rodrigomiragaya.kotlinexamplessamples.retrofitGet
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
