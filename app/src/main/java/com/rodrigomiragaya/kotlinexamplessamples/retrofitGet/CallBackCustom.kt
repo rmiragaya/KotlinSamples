@@ -60,7 +60,7 @@ open class CallBackCustom<T> : retrofit2.Callback<T> {
 
     override fun onFailure(call: Call<T>, t: Throwable) {
         //todo mandar el Throwable que a veces tiene info importante
-        Log.d(TAG, "onFailure: ${t.toString()}")
+        Log.d(TAG, "onFailure: ${t}")
         onNetworkError?.invoke()
         onFinish?.invoke(isSuccessful)
     }

@@ -38,11 +38,7 @@ class RetrofitGetActivity : AppCompatActivity() {
         }
     }
     private fun initObservers(){
-        viewModel.getPostResponse.observe(this, Observer { response ->
-            viewModel.post.value = response
-        })
-
-        viewModel.post.observe(this, Observer { posts ->
+        viewModel.getPostResponse.observe(this, Observer { posts ->
             posts?.let {
                 if (it.errorResponse != null) {
                     postResponseTV.text = "Codigo: ${it.errorResponse!!.code} Description: ${it.errorResponse!!.description}"
@@ -55,5 +51,19 @@ class RetrofitGetActivity : AppCompatActivity() {
                 }
             }
         })
+
+//        viewModel.post.observe(this, Observer { posts ->
+//            posts?.let {
+//                if (it.errorResponse != null) {
+//                    postResponseTV.text = "Codigo: ${it.errorResponse!!.code} Description: ${it.errorResponse!!.description}"
+//                } else {
+//                    var postString = ""
+//                    it.value!!.forEach {
+//                        postString += it.toString() + "\n\n"
+//                    }
+//                    postResponseTV.text = postString
+//                }
+//            }
+//        })
     }
 }

@@ -12,7 +12,7 @@ class RetrofitActivityViewmodel (state : SavedStateHandle) : StateViewModel(stat
     val getPostResponse : LiveData<ResponseWrapper<List<Post>>> = Transformations.map(repo.getPostResponse) { it }
 
     init{
-        bindData("post", post)
+        bindData("post", repo.getPostResponse)
     }
 
     fun getPost () {

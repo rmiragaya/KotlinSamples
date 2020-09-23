@@ -35,15 +35,16 @@ class RecyclerViewActivity : AppCompatActivity() {
             noResultsLayout.visibility = View.INVISIBLE
         }
 
-        initRecycler()
+
         initObservers()
+        initRecycler()
+
 
     }
 
     override fun onStart() {
         super.onStart()
         Log.d(TAG, "onStart: call")
-        if (viewModel.post.value == null) {viewModel.getUserIdPosts(getRandomUserID())}
     }
 
     private fun initRecycler(){
@@ -52,11 +53,14 @@ class RecyclerViewActivity : AppCompatActivity() {
     }
 
     private fun initObservers(){
-        viewModel.getPostResponse.observe(this, Observer { response ->
-            viewModel.setPost(response)
+        viewModel.isLoading.observe(this, Observer { isLoading ->
+            isLoading?.let {
+                if (isLoading) loadingId.visibility = View.VISIBLE else loadingId.visibility = View.INVISIBLE
+            }
         })
 
-        viewModel.post.observe(this, Observer { posts ->
+        viewModel.getPostResponse.observe(this, Observer { posts ->
+            if (posts == null) viewModel.getUserIdPosts(getRandomUserID())
             posts?.let {
                 if (it.errorResponse != null) {
                     Toast.makeText(
@@ -66,18 +70,32 @@ class RecyclerViewActivity : AppCompatActivity() {
                     ).show()
                 } else {
                     adapter.setData(it.value!!)
-                    if (it.value.isEmpty() && viewModel.isLoading.value == false){
+                    if (it.value.isEmpty()){
                         noResultsLayout.visibility = View.VISIBLE
                     }
                 }
             }
         })
 
-        viewModel.isLoading.observe(this, Observer { isLoading ->
-            isLoading?.let {
-                if (isLoading) loadingId.visibility = View.VISIBLE else loadingId.visibility = View.INVISIBLE
-            }
-        })
+//        viewModel.post.observe(this, Observer { posts ->
+//            posts?.let {
+//                viewModel.isLoading.value = false
+//                if (it.errorResponse != null) {
+//                    Toast.makeText(
+//                        this,
+//                        it.errorResponse!!.description.toString(),
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+//                } else {
+//                    adapter.setData(it.value!!)
+//                    if (it.value.isEmpty() && viewModel.isLoading.value == false){
+//                        noResultsLayout.visibility = View.VISIBLE
+//                    }
+//                }
+//            }
+//        })
+
+
     }
 
     private fun getRandomUserID() : Int{

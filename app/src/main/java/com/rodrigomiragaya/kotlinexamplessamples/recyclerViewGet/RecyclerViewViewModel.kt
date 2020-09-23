@@ -11,27 +11,25 @@ class RecyclerViewViewModel (state : SavedStateHandle) : StateViewModel(state) {
 
     private val repo = JsonPlaseHolderRepository()
 
-
-    val post : MutableLiveData<ResponseWrapper<List<Post>>> = MutableLiveData()
+    val isLoading : LiveData<Boolean> = Transformations.map(repo.isLoading) { it }
+//    val post : MutableLiveData<ResponseWrapper<List<Post>>> = MutableLiveData()
     val getPostResponse : LiveData<ResponseWrapper<List<Post>>> = Transformations.map(repo.getPostResponse) { it }
-    val isLoading : MutableLiveData<Boolean> = MutableLiveData()
+
 
     init{
-        bindData("post", post)
+        bindData("post", repo.getPostResponse)
     }
 
     fun getUserIdPosts(userId: Int){
-        isLoading.value = true
         viewModelScope.launch {
             repo.getUserIdPosts(userId)
         }
     }
 
-    fun setPost(listPost : ResponseWrapper<List<Post>>){
-        isLoading.value = false
-        post.value = listPost
-
-    }
+//    fun setPost(listPost : ResponseWrapper<List<Post>>){
+//        isLoading.value = false
+//        post.value = listPost
+//    }
 
 
 }
