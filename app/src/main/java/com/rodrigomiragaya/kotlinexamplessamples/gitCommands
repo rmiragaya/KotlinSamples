@@ -20,4 +20,4 @@ git config --global alias.lg "log --oneline --decorate --all --graph" (es un sho
 
 git checkout -- filename (revierte los cambios SOLO en el archivo mencionado)
 
-mock
+git reset --soft HEAD^ (Deshace el ultimo commit (si hicimos commt pero nos olvidamos de agregar algo, podemos correr esto y deshace el commit))
