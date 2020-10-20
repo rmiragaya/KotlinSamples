@@ -39,11 +39,13 @@ class MyAdapter (val onClick : (Post) -> Unit) :  RecyclerView.Adapter<MyAdapter
         val title: TextView = itemView.title_txt
         val body: TextView = itemView.body_txt
 
+
      fun setItem (item: Post){
             itemView.setOnClickListener {onClick(item)}
         }
     }
 
+    //metodo para actualizar la lista de elementos del recyclerView
     fun setData(newList : List<Post>){
         data = newList
         notifyDataSetChanged()

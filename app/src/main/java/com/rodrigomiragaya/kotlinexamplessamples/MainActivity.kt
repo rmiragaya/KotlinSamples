@@ -3,6 +3,7 @@ package com.rodrigomiragaya.kotlinexamplessamples
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.rodrigomiragaya.kotlinexamplessamples.coil.CoilActivity
 import com.rodrigomiragaya.kotlinexamplessamples.recyclerViewGet.RecyclerViewActivity
 import com.rodrigomiragaya.kotlinexamplessamples.retrofitGet.RetrofitGetActivity
 import com.rodrigomiragaya.kotlinexamplessamples.retrofitPost.RetrofitPostActivity
@@ -35,6 +36,11 @@ class MainActivity : AppCompatActivity() {
 
         retrofitPostBtn.setOnClickListener {
             val intent = Intent(this, RetrofitPostActivity::class.java)
+            startActivity(intent)
+        }
+
+        coilBtn.setOnClickListener {
+            val intent = Intent(this, CoilActivity::class.java)
             startActivity(intent)
         }
 

@@ -7,6 +7,7 @@ import retrofit2.http.*
 interface SimpleApi {
 
     //baseUrl + "/posts/x"
+    @Headers("Ahutoto: 123123123")
     @GET("posts/1")
     fun getPost() : Call<Post>
 

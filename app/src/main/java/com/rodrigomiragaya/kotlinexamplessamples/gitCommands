@@ -1,0 +1,8 @@
+git init (inicia el git en el proyecto, crea el repo local, crea la carpeta .git)
+git status (status del git, muestrs branch, archovos modificados)
+git add . (agrega toddo al git para que este observando modificaciones)
+git add index.html (agrega un archivo especifico)
+git commit (hace commit de los archivos previamente agregados al add)
+git commit -m "comentario" (agrega un comentario al commit)
+git commit -s (firma el commit)
+git checkout -- . (checkout de la rama actual,vuelve a como estaba el ultimo commit de la rama)

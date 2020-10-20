@@ -77,23 +77,6 @@ class RecyclerViewActivity : AppCompatActivity() {
             }
         })
 
-//        viewModel.post.observe(this, Observer { posts ->
-//            posts?.let {
-//                viewModel.isLoading.value = false
-//                if (it.errorResponse != null) {
-//                    Toast.makeText(
-//                        this,
-//                        it.errorResponse!!.description.toString(),
-//                        Toast.LENGTH_SHORT
-//                    ).show()
-//                } else {
-//                    adapter.setData(it.value!!)
-//                    if (it.value.isEmpty() && viewModel.isLoading.value == false){
-//                        noResultsLayout.visibility = View.VISIBLE
-//                    }
-//                }
-//            }
-//        })
 
 
     }

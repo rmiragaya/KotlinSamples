@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".retrofitPost.RetrofitPostActivity"></activity>
+        <activity android:name=".coil.CoilActivity"></activity>
+        <activity android:name=".retrofitPost.RetrofitPostActivity" />
         <activity android:name=".recyclerViewGet.RecyclerViewActivity" />
         <activity android:name=".retrofitGet.RetrofitGetActivity" />
         <activity android:name=".saveStateHandle.SaveStateActivity" />

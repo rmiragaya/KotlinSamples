@@ -51,19 +51,5 @@ class RetrofitGetActivity : AppCompatActivity() {
                 }
             }
         })
-
-//        viewModel.post.observe(this, Observer { posts ->
-//            posts?.let {
-//                if (it.errorResponse != null) {
-//                    postResponseTV.text = "Codigo: ${it.errorResponse!!.code} Description: ${it.errorResponse!!.description}"
-//                } else {
-//                    var postString = ""
-//                    it.value!!.forEach {
-//                        postString += it.toString() + "\n\n"
-//                    }
-//                    postResponseTV.text = postString
-//                }
-//            }
-//        })
     }
 }

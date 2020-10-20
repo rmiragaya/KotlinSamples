@@ -81,7 +81,7 @@ open class CallBackCustom<T> : retrofit2.Callback<T> {
 
     private fun getHeaders(headers: Headers): HashMap<String, String> {
         val result = HashMap<String, String>()
-        for (i in 0 until headers.size()) {
+        for (i in 0 until headers.size) {
             result[headers.name(i)] = headers.value(i)
         }
         return result
