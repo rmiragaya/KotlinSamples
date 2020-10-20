@@ -24,7 +24,6 @@ open class CallBackCustom<T> : retrofit2.Callback<T> {
         } else {
             val errorResponse: ErrorResponse? = getErrorResponse(response)
             onServerError?.invoke(response.code().toString(), errorResponse?.description)
-
 //            when (response.code()) {
 //                401 -> {
 //                    //can customize
