@@ -19,3 +19,5 @@ git diff --staged(muestra los cambios en los archivos que ya estan puestos en el
 git config --global alias.lg "log --oneline --decorate --all --graph" (es un shortcut para crear en el global de git, y usarlo siempre)
 
 git checkout -- filename (revierte los cambios SOLO en el archivo mencionado)
+
+mock
