@@ -1,9 +1,11 @@
 package com.rodrigomiragaya.kotlinexamplessamples.recyclerViewGet
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -19,8 +21,9 @@ const val TAG = "RecyclerViewActivity"
 class RecyclerViewActivity : AppCompatActivity() {
 
     private lateinit var viewModel : RecyclerViewViewModel
-    private val adapter by lazy { MyAdapter { item -> doClick(item) } }
+    private val adapter by lazy { MyAdapter { post -> doClick(post) } }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
@@ -38,6 +41,11 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         initObservers()
         initRecycler()
+
+        getPostsBtn.apply {
+            setOnClickListener {  }
+
+        }
 
 
     }
@@ -90,4 +98,5 @@ class RecyclerViewActivity : AppCompatActivity() {
     private fun doClick(post: Post){
         Toast.makeText(this, post.toString(), Toast.LENGTH_SHORT).show()
     }
+
 }

@@ -20,7 +20,6 @@ open class CallBackCustom<T> : retrofit2.Callback<T> {
             isSuccessful = true
             onSuccess?.invoke(response.body())
             response.headers()
-
         } else {
             val errorResponse: ErrorResponse? = getErrorResponse(response)
             onServerError?.invoke(response.code().toString(), errorResponse?.description)

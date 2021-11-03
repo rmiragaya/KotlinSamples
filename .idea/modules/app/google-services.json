@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "58608157855",
+    "firebase_url": "https://kotlinexamplessamples.firebaseio.com",
+    "project_id": "kotlinexamplessamples",
+    "storage_bucket": "kotlinexamplessamples.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58608157855:android:fd9153e4cc4ab867e40eaa",
+        "android_client_info": {
+          "package_name": "com.rodrigomiragaya.kotlinexamplessamples"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58608157855-nnmj8r53a9ap44i47urag5u8iq6aua6n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rodrigomiragaya.kotlinexamplessamples",
+            "certificate_hash": "8e3f78226cc0525ef7cb4b67f88ddd6e211831fb"
+          }
+        },
+        {
+          "client_id": "58608157855-shj6h73r9io2i1p7ul7ma5m6r4o38jfn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqt3ZtK9YBoLvpLN-Iz21U1wqFSF-yWwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58608157855-shj6h73r9io2i1p7ul7ma5m6r4o38jfn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

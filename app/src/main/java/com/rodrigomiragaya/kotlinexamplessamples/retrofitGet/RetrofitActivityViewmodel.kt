@@ -8,8 +8,9 @@ class RetrofitActivityViewmodel (state : SavedStateHandle) : StateViewModel(stat
 
     private val repo = JsonPlaseHolderRepository()
 
-    val post : MutableLiveData<ResponseWrapper<List<Post>>> = MutableLiveData()
+//    val post : MutableLiveData<ResponseWrapper<List<Post>>> = MutableLiveData()
     val getPostResponse : LiveData<ResponseWrapper<List<Post>>> = Transformations.map(repo.getPostResponse) { it }
+    //todo test this
 
     init{
         bindData("post", repo.getPostResponse)
@@ -38,4 +39,5 @@ class RetrofitActivityViewmodel (state : SavedStateHandle) : StateViewModel(stat
             repo.getUserIdPosts(userId)
         }
     }
+
 }

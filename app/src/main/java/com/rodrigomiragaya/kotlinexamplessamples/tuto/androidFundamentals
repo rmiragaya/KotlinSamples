@@ -1,0 +1,32 @@
+* Activity: An Android activity is one screen of the Android app's user interface. An Android app may contain one or more activities, meaning one or more screens.
+    The Android app starts by showing the main activity, and from there the app may make it possible to open additional activities.
+
+*Activity Life Cycle
+ onCreate() This is the first callback and called when the activity is first created.
+ onStart() This callback is called when the activity becomes visible to the user.
+ onResume() This is called when the user starts interacting with the application.
+ onPause() The paused activity does not receive user input and cannot execute any code and called when the current activity is being paused and the previous activity is being resumed.
+ onStop() This callback is called when the activity is no longer visible.
+ onDestroy() This callback is called before the activity is destroyed by the system.
+ onRestart() This callback is called when the activity restarts after stopping it.
+
+ * Fragment: Un Fragment representa una parte reutilizable de la IU de tu app. Un fragmento define y administra su propio diseño,
+    tiene su propio ciclo de vida y puede administrar sus propios eventos de entrada. Los fragmentos no pueden existir por sí solos,
+    sino que deben estar alojados por una actividad u otro fragmento.
+
+
+* Intent: Explicit -> Decimos a donde tiene que ir el intent
+          Implicit -> No especifica la app, sino el comprotamiento o la accion a realizar
+
+* Content Provider: A content provider manages access to a central repository of data. A provider is part of an Android application, which often provides its own UI for working with the data.
+    However, content providers are primarily intended to be used by other applications, which access the provider using a provider client object.
+
+
+* Polymorphism:
+    Overloading: Same method name, diferent parameters or return
+    OverRiding: Animal classes implement talk, and override all classes with the animal sound
+
+###
+* Java en que compila?
+* Gestionado de memoria de JAva? Kotlin?
+

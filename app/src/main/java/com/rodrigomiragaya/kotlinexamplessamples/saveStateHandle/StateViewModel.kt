@@ -26,5 +26,4 @@ abstract class StateViewModel (val state: SavedStateHandle) : ViewModel() {
         return state[key]
     }
 
-
 }

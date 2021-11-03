@@ -16,6 +16,13 @@ git log --oneline --decorate --all --graph(el log pero solo con el hash y el com
 git diff (muestra los cambios en los archivos)
 git diff --staged(muestra los cambios en los archivos que ya estan puestos en el git)
 
+git config --global -l (llista de todos los parametros globales)
+
+git config --global user.email r.miragaya@redlink.com.ar (cambiar mail)
+git config --global user.name rodrigo (cambiar name)
+git config --global commit.gpgsign true/false (firmar en cada commit con la gpg)
+
+
 git config --global alias.lg "log --oneline --decorate --all --graph" (es un shortcut para crear en el global de git, y usarlo siempre)
 
 git checkout -- filename (revierte los cambios SOLO en el archivo mencionado)

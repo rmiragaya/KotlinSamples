@@ -2,6 +2,9 @@ package com.rodrigomiragaya.kotlinexamplessamples.retrofitGet
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class JsonPlaseHolderRepository {
 
@@ -17,6 +20,18 @@ class JsonPlaseHolderRepository {
             onFinish = { Log.d(TAG, "getPost: finish")
                 isLoading.value = false
             }
+        })
+
+        RetrofitInstance.jsonPlaceHolderApi.getPost().enqueue(
+            object : Callback<Post>{
+            override fun onResponse(call: Call<Post>, response: Response<Post>) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onFailure(call: Call<Post>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
         })
     }
 

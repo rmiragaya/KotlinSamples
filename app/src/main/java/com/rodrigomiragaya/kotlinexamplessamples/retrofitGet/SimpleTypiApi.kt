@@ -4,7 +4,7 @@ import retrofit2.Call
 import retrofit2.http.*
 
 
-interface SimpleApi {
+interface SimpleTypiApi {
 
     //baseUrl + "/posts/x"
     @Headers("Ahutoto: 123123123")
